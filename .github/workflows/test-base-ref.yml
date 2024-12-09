@@ -1,0 +1,15 @@
+name: Test Base Ref
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test-base-ref:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print Base Ref
+        run: echo "Base branch: ${{ github.base_ref }}"
